@@ -226,17 +226,21 @@ class NodeStl {
    * @param {string|buffer} path
    * @param {object} config
    */
-  constructor(path, config = { density: 1.04 }) {
-    let buffer;
+  // constructor(path, config = { density: 1.04 }) {
+  //   let buffer;
 
-    if (Object.prototype.toString.call(path) === "[object String]") {
-      const fs = require("fs"); // moved this as a step toward browser compatibility
+  //   if (Object.prototype.toString.call(path) === "[object String]") {
+  //     const fs = require("fs"); // moved this as a step toward browser compatibility
 
-      buffer = fs.readFileSync(path);
-    } else {
-      buffer = path;
-    }
+  //     buffer = fs.readFileSync(path);
+  //   } else {
+  //     buffer = path;
+  //   }
 
+  //   this._parse(buffer, config);
+  // }
+
+  constructor(buffer, config = { density: 1.04}) {
     this._parse(buffer, config);
   }
 
